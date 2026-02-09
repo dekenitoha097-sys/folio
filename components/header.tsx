@@ -25,13 +25,13 @@ const Header = ({ scrollToSection, setIsMenuOpen, isMenuOpen }: Props) => {
         <>
             {/* Header fixe avec glassmorphism neon */}
             <motion.header 
-                className="fixed top-4 left-4 right-4 z-50 transition-all duration-300"
+                className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
             >
                 <motion.div 
-                    className="bg-black/40 backdrop-blur-2xl border border-[#84cc16]/30 rounded-2xl shadow-2xl shadow-[#84cc16]/10"
+                    className="bg-black/40 backdrop-blur-2xl border-b border-[#84cc16]/30 shadow-2xl shadow-[#84cc16]/10"
                     whileHover={{ boxShadow: "0 0 40px rgba(132, 204, 22, 0.2)" }}
                     transition={{ duration: 0.3 }}
                 >

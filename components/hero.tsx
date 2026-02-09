@@ -34,7 +34,7 @@ const Hero = ({ scrollToSection }: Props) => {
             {/* Section Hero */}
             <section
                 id="accueil"
-                className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black"
+                className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black pt-20 md:pt-24"
             >
                 {/* Grille de fond */}
                 <div className="absolute inset-0 overflow-hidden pointer-events-none">
