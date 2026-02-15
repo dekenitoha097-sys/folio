@@ -229,7 +229,7 @@ const Hero = ({ scrollToSection }: Props) => {
                                 animate={{ opacity: 1 }}
                                 transition={{ delay: 0.6, duration: 0.6 }}
                             >
-                                <StatCard number={50} suffix="+" label="Projets réalisés" />
+                                <StatCard number={20} suffix="+" label="Projets réalisés" />
                                 <StatCard number={98} suffix="%" label="Clients satisfaits" />
                                 <StatCard number={3} suffix="+" label="Années d'expérience" />
                             </motion.div>

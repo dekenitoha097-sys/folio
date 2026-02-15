@@ -8,12 +8,15 @@ import AppExemples from "@/components/appExemple";
 import Contacts from "@/components/contacts";
 import Projects from "@/components/projetcs";
 import Footer from "@/components/footer";
+import Testimonials from "@/components/testimonials";
 import {
   Code,
   Smartphone,
   Palette,
   Zap,
 } from 'lucide-react';
+
+type Category = 'all' | 'web' | 'mobile';
 
 type FormData = {
   name: string,
@@ -75,17 +78,23 @@ export default function Home() {
   }
 
   // Liste des projets
-  const projects = [
+  const projects: { id: number; title: string; description: string; icon: any; gradient: string; images: string[]; technologies: string[]; liveUrl: string; githubUrl: string; category: 'web' | 'mobile' }[] = [
     {
       id: 1,
       title: "E-Commerce Platform",
       description: "Plateforme e-commerce moderne avec Next.js et Stripe",
       icon: Code,
       gradient: "from-gray-900 to-gray-800",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=400&fit=crop",
-      technologies: ["Next.js", "TypeScript", "Stripe"],
-      liveUrl: "https://ecommerce-demo.vercel.app",
-      githubUrl: "https://github.com/votre-username/ecommerce-platform"
+      images: [
+        "e1.png",
+        "e2.png",
+        "e3.png",
+        "e4.png"
+      ],
+      technologies: ["Next.js", "TypeScript", "Tailwind"],
+      liveUrl: "https://store-peach-ten-85.vercel.app/",
+      githubUrl: "https://github.com/dekenitoha097-sys/store",
+      category: 'web'
     },
     {
       id: 2,
@@ -93,10 +102,15 @@ export default function Home() {
       description: "App de suivi sportif avec React Native et Firebase",
       icon: Smartphone,
       gradient: "from-gray-800 to-gray-700",
-      image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&h=400&fit=crop",
+      images: [
+        "q1.png",
+        "q2.png",
+        "q3.png",
+      ],
       technologies: ["React Native", "Firebase", "Expo"],
-      liveUrl: "https://expo.dev/@votre-username/fitness-app",
-      githubUrl: "https://github.com/votre-username/fitness-mobile-app"
+      liveUrl: "https://quizhub-kappa.vercel.app/quiz",
+      githubUrl: "https://github.com/dekenitoha097-sys/quizhub",
+      category: 'web'
     },
     {
       id: 3,
@@ -104,44 +118,17 @@ export default function Home() {
       description: "Tableau de bord avec visualisations de données en temps réel",
       icon: Palette,
       gradient: "from-gray-800 to-gray-600",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop",
+      images: [
+        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop",
+        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop",
+        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop"
+      ],
       technologies: ["React", "D3.js", "Node.js"],
       liveUrl: "https://analytics-dashboard-demo.vercel.app",
-      githubUrl: "https://github.com/votre-username/analytics-dashboard"
+      githubUrl: "https://github.com/votre-username/analytics-dashboard",
+      category: 'mobile'
     },
-    {
-      id: 4,
-      title: "SaaS Gestion de Projet",
-      description: "Outil de gestion collaborative pour équipes agiles",
-      icon: Zap,
-      gradient: "from-gray-700 to-gray-600",
-      image: "https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?w=800&h=400&fit=crop",
-      technologies: ["Next.js", "PostgreSQL", "Prisma"],
-      liveUrl: "https://project-manager-saas.vercel.app",
-      githubUrl: "https://github.com/votre-username/project-management-saas"
-    },
-    {
-      id: 5,
-      title: "Portfolio Architecte",
-      description: "Site vitrine élégant avec galerie et animations",
-      icon: Code,
-      gradient: "from-gray-700 to-gray-500",
-      image: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=800&h=400&fit=crop",
-      technologies: ["Next.js", "Framer Motion", "Sanity"],
-      liveUrl: "https://architect-portfolio-demo.vercel.app",
-      githubUrl: "https://github.com/votre-username/architect-portfolio"
-    },
-    {
-      id: 6,
-      title: "App Livraison",
-      description: "Application de livraison avec tracking en temps réel",
-      icon: Smartphone,
-      gradient: "from-gray-900 to-gray-800",
-      image: "https://images.unsplash.com/photo-1556910103-1c02745a30bf?w=800&h=400&fit=crop",
-      technologies: ["React Native", "Maps API", "Socket.io"],
-      liveUrl: "https://expo.dev/@votre-username/delivery-app",
-      githubUrl: "https://github.com/votre-username/delivery-tracking-app"
-    }
+    
   ];
   return (
     <>
@@ -151,6 +138,7 @@ export default function Home() {
       <Solutions scrollToSection={scrollToSection}></Solutions>
       <AppExemples scrollToSection={scrollToSection}></AppExemples>
       <Projects scrollToSection={scrollToSection} projects={projects}></Projects>
+      <Testimonials scrollToSection={scrollToSection}></Testimonials>
       <Contacts formData={formData} handleInputChange={handleInputChange} handleSubmit={handleSubmit} formStatus={formStatus} loading={loading}></Contacts>
       <Footer scrollToSection={scrollToSection} setIsMenuOpen={setIsMenuOpen}></Footer>
     </>

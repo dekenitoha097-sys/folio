@@ -10,7 +10,8 @@ import {
     User,
     Lightbulb,
     Mail,
-    ArrowRight
+    ArrowRight,
+    Quote
 } from 'lucide-react';
 
 
@@ -71,7 +72,8 @@ const Header = ({ scrollToSection, setIsMenuOpen, isMenuOpen }: Props) => {
                                         { id: 'a-propos', label: 'À propos' },
                                         { id: 'services', label: 'Services' },
                                         { id: 'exemples', label: 'Exemples' },
-                                        { id: 'realisations', label: 'Réalisations' }
+                                        { id: 'realisations', label: 'Réalisations' },
+                                        { id: 'testimonials', label: 'Témoignages' }
                                     ].map((item) => (
                                         <motion.button
                                             key={item.id}
@@ -179,7 +181,8 @@ const Header = ({ scrollToSection, setIsMenuOpen, isMenuOpen }: Props) => {
                                     { id: 'a-propos', label: 'À propos', icon: User },
                                     { id: 'services', label: 'Services', icon: Zap },
                                     { id: 'exemples', label: 'Exemples', icon: Lightbulb },
-                                    { id: 'realisations', label: 'Réalisations', icon: Palette }
+                                    { id: 'realisations', label: 'Réalisations', icon: Palette },
+                                    { id: 'testimonials', label: 'Témoignages', icon: Quote }
 
                                 ].map((item, index) => (
                                     <motion.button

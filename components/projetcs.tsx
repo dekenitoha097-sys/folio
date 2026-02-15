@@ -1,13 +1,17 @@
 'use client';
+
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 
 import {
 
     ExternalLink,
-    Github, Sparkles
+    Github, Sparkles, Code, Smartphone
 } from 'lucide-react';
 
 import { LucideIcon } from "lucide-react";
+
+type Category = 'all' | 'web' | 'mobile';
 
 type Project = {
     id: number;
@@ -15,10 +19,11 @@ type Project = {
     description: string;
     icon: LucideIcon;
     gradient: string;
-    image: string;
+    images: string[];
     technologies: string[];
     liveUrl: string;
     githubUrl: string;
+    category: 'web' | 'mobile';
 };
 
 type Props = {
@@ -27,6 +32,32 @@ type Props = {
 };
 
 const Projects = ({ projects, scrollToSection }: Props) => {
+    // State pour le filtre de catégorie
+    const [activeFilter, setActiveFilter] = useState<Category>('all');
+
+    // State pour suivre l'index de l'image actuelle pour chaque projet
+    const [currentImageIndexes, setCurrentImageIndexes] = useState<Record<number, number>>({});
+
+    // Fonction pour obtenir l'index actuel de l'image pour un projet
+    const getCurrentImageIndex = (projectId: number) => {
+        return currentImageIndexes[projectId] || 0;
+    };
+
+    // Fonction pour naviguer à l'image suivante
+    const nextImage = (projectId: number, imagesLength: number) => {
+        setCurrentImageIndexes(prev => ({
+            ...prev,
+            [projectId]: (getCurrentImageIndex(projectId) + 1) % imagesLength
+        }));
+    };
+
+    // Fonction pour naviguer à l'image précédente
+    const prevImage = (projectId: number, imagesLength: number) => {
+        setCurrentImageIndexes(prev => ({
+            ...prev,
+            [projectId]: (getCurrentImageIndex(projectId) - 1 + imagesLength) % imagesLength
+        }));
+    };
     return (
         <>
             {/* Section Réalisations */}
@@ -107,9 +138,47 @@ const Projects = ({ projects, scrollToSection }: Props) => {
                         </p>
                     </div>
 
+                    {/* Filtres de projets */}
+                    <div className="flex flex-wrap justify-center gap-4 mb-12">
+                        <button
+                            onClick={() => setActiveFilter('all')}
+                            className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
+                                activeFilter === 'all'
+                                    ? 'bg-[#84cc16] text-black shadow-lg shadow-[#84cc16]/50'
+                                    : 'bg-white/10 text-gray-300 hover:bg-white/20 hover:text-white'
+                            }`}
+                        >
+                            Tout
+                        </button>
+                        <button
+                            onClick={() => setActiveFilter('web')}
+                            className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 flex items-center gap-2 ${
+                                activeFilter === 'web'
+                                    ? 'bg-[#84cc16] text-black shadow-lg shadow-[#84cc16]/50'
+                                    : 'bg-white/10 text-gray-300 hover:bg-white/20 hover:text-white'
+                            }`}
+                        >
+                            <Code className="w-4 h-4" />
+                            Web
+                        </button>
+                        <button
+                            onClick={() => setActiveFilter('mobile')}
+                            className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 flex items-center gap-2 ${
+                                activeFilter === 'mobile'
+                                    ? 'bg-[#84cc16] text-black shadow-lg shadow-[#84cc16]/50'
+                                    : 'bg-white/10 text-gray-300 hover:bg-white/20 hover:text-white'
+                            }`}
+                        >
+                            <Smartphone className="w-4 h-4" />
+                            Mobile
+                        </button>
+                    </div>
+
                     {/* Grille de projets */}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-                        {projects.map((project, index) => {
+                        {projects
+                            .filter(project => activeFilter === 'all' || project.category === activeFilter)
+                            .map((project, index) => {
                             const IconComponent = project.icon;
                             const delayClass = `animation-delay-${(index + 2) * 100}`;
 
@@ -125,20 +194,60 @@ const Projects = ({ projects, scrollToSection }: Props) => {
                                         <div className={`relative h-56 bg-gradient-to-br ${project.gradient} overflow-hidden`}>
                                             <div className="absolute inset-0">
                                                 <img 
-                                                    src={project.image} 
-                                                    alt={project.title}
-                                                    className="w-full h-full object-cover"
+                                                    src={project.images[getCurrentImageIndex(project.id)]} 
+                                                    alt={`${project.title} - Image ${getCurrentImageIndex(project.id) + 1}`}
+                                                    className="w-full h-full object-cover transition-opacity duration-300"
                                                 />
                                                 {/* Overlay pour lisibilité */}
                                                 <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/40 to-black/60"></div>
                                             </div>
 
-                                            {/* Icône overlay au centre */}
-                                            <div className="absolute inset-0 flex items-center justify-center z-10">
-                                                <div className="transform transition-all duration-500 group-hover:scale-125 group-hover:rotate-6 drop-shadow-lg">
-                                                    <IconComponent className="h-16 w-16 text-white opacity-90" />
-                                                </div>
-                                            </div>
+                                            {/* Navigation images - Flèches */}
+                                            {project.images.length > 1 && (
+                                                <>
+                                                    {/* Bouton précédent */}
+                                                    <button
+                                                        onClick={(e) => {
+                                                            e.stopPropagation();
+                                                            prevImage(project.id, project.images.length);
+                                                        }}
+                                                        className="absolute left-2 top-1/2 -translate-y-1/2 z-20 w-8 h-8 bg-black/50 hover:bg-black/70 rounded-full flex items-center justify-center transition-all duration-300 md:opacity-100"
+                                                        aria-label="Image précédente"
+                                                    >
+                                                        <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                                                        </svg>
+                                                    </button>
+                                                    
+                                                    {/* Bouton suivant */}
+                                                    <button
+                                                        onClick={(e) => {
+                                                            e.stopPropagation();
+                                                            nextImage(project.id, project.images.length);
+                                                        }}
+                                                        className="absolute right-2 top-1/2 -translate-y-1/2 z-20 w-8 h-8 bg-black/50 hover:bg-black/70 rounded-full flex items-center justify-center transition-all duration-300 md:opacity-100"
+                                                        aria-label="Image suivante"
+                                                    >
+                                                        <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                                        </svg>
+                                                    </button>
+
+                                                    {/* Indicateurs de position */}
+                                                    <div className="absolute bottom-3 left-1/2 -translate-x-1/2 z-20 flex gap-1.5">
+                                                        {project.images.map((_, imgIndex) => (
+                                                            <div
+                                                                key={imgIndex}
+                                                                className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                                                                    imgIndex === getCurrentImageIndex(project.id)
+                                                                        ? 'bg-white scale-110'
+                                                                        : 'bg-white/40'
+                                                                }`}
+                                                            />
+                                                        ))}
+                                                    </div>
+                                                </>
+                                            )}
 
                                             {/* Overlay neon au hover */}
                                             <div className="absolute inset-0 bg-gradient-to-br from-[#84cc16]/0 to-[#84cc16]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />

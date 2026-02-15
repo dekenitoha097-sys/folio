@@ -1,6 +1,7 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
+import TechStack from '@/components/TechStack';
 import {
     Code,
     Smartphone,
@@ -205,6 +206,11 @@ const Solutions = ({ scrollToSection }: Props) => {
                             </div>
                         </div>
 
+                    </div>
+
+                    {/* Section Technologies - Scroll Infini */}
+                    <div className="mt-20">
+                        <TechStack />
                     </div>
 
                     {/* Section CTA bas */}

@@ -95,8 +95,8 @@ const About = ({ scrollToSection }: Props) => {
                             {/* Metrics en bas */}
                             <div className="grid grid-cols-3 gap-8 pt-12 border-t border-gray-800">
                                 <div className="text-center group cursor-default">
-                                    <div className="text-4xl font-bold text-white mb-2 group-hover:scale-110 transition-transform duration-300">50+</div>
-                                    <div className="text-sm text-gray-400 uppercase tracking-wider">Projets livrés</div>
+                                    <div className="text-4xl font-bold text-white mb-2 group-hover:scale-110 transition-transform duration-300">20+</div>
+                                    <div className="text-sm text-gray-400 uppercase tracking-wider">Projets réalisés</div>
                                 </div>
                                 <div className="text-center group cursor-default">
                                     <div className="text-4xl font-bold text-white mb-2 group-hover:scale-110 transition-transform duration-300">98%</div>
