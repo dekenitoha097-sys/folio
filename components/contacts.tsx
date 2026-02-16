@@ -5,8 +5,6 @@ import {
     Phone,
     MapPin,
     Sparkles,
-    MessageCircle,
-
 } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
@@ -327,7 +325,7 @@ const Contacts = ({ formData, handleInputChange, handleSubmit, formStatus, loadi
                                                     onChange={handleInputChange}
                                                     placeholder="Bonjour ! J'aimerais discuter d'un projet...&#10;&#10;Décrivez votre projet, vos objectifs, votre timeline..."
                                                     rows={8}
-                                                    className="border-2 border-[#84cc16]/30 focus:border-[#84cc16] rounded-2xl resize-none bg-white/5 focus:bg-white/10 transition-all duration-300 text-white placeholder:text-gray-500 hover:border-[#84cc16]/50 pt-4"
+                                                    className="border-2 h-36 border-[#84cc16]/30 focus:border-[#84cc16] rounded-2xl resize-none bg-white/5 focus:bg-white/10 transition-all duration-300 text-white placeholder:text-gray-500 hover:border-[#84cc16]/50 pt-4"
                                                 />
                                                 <div className="flex justify-between items-center mt-2 px-2">
                                                     <span className="text-xs text-gray-400">Minimum 20 caractères</span>
@@ -372,6 +370,25 @@ const Contacts = ({ formData, handleInputChange, handleSubmit, formStatus, loadi
                                                             <span className="text-xl">🎉</span>
                                                         </h4>
                                                         <p className="text-sm text-gray-300">Nous vous répondrons très bientôt.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        )}
+
+                                        {formStatus === 'error' && (
+                                            <div className="p-6 bg-gradient-to-r from-red-500/20 to-red-600/10 border-2 border-red-500/50 rounded-2xl animate-fade-in relative overflow-hidden">
+                                                <div className="relative flex items-center gap-4">
+                                                    <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg shadow-red-500/50">
+                                                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M6 18L18 6M6 6l12 12" />
+                                                        </svg>
+                                                    </div>
+                                                    <div>
+                                                        <h4 className="font-bold text-red-400 mb-1 flex items-center gap-2">
+                                                            Erreur lors de l'envoi
+                                                            <span className="text-xl">⚠️</span>
+                                                        </h4>
+                                                        <p className="text-sm text-gray-300">Veuillez réessayer ou nous contacter directement par email.</p>
                                                     </div>
                                                 </div>
                                             </div>

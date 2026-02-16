@@ -9,6 +9,7 @@ import Contacts from "@/components/contacts";
 import Projects from "@/components/projetcs";
 import Footer from "@/components/footer";
 import Testimonials from "@/components/testimonials";
+import FloatingChat from "@/components/floatingChat";
 import {
   Code,
   Smartphone,
@@ -54,26 +55,34 @@ export default function Home() {
     setLoading(true);
 
     try {
-      const res = await fetch("https://my-portfolio-n94a.vercel.app/api", {
+      const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name: formData.name, email: formData.email, message: formData.message }),
       });
 
       const data = await res.json();
-      //toast(data.message);
-      setFormStatus('success');
-
-      setTimeout(() => {
-        setFormStatus('idle');
-        setFormData({ name: '', email: '', message: '' });
-      }, 8000);
+      
+      if (res.ok) {
+        setFormStatus('success');
+        setTimeout(() => {
+          setFormStatus('idle');
+          setFormData({ name: '', email: '', message: '' });
+        }, 8000);
+      } else {
+        setFormStatus('error');
+        setTimeout(() => {
+          setFormStatus('idle');
+        }, 5000);
+      }
 
     } catch (error) {
-      //toast("Une erreur est survenue !");
+      setFormStatus('error');
+      setTimeout(() => {
+        setFormStatus('idle');
+      }, 5000);
     } finally {
       setLoading(false);
-      setFormData({ name: "", email: "", message: "" });
     }
   }
 
@@ -112,6 +121,7 @@ export default function Home() {
       githubUrl: "https://github.com/dekenitoha097-sys/quizhub",
       category: 'web'
     },
+
     {
       id: 3,
       title: "Dashboard Analytics",
@@ -128,6 +138,22 @@ export default function Home() {
       githubUrl: "https://github.com/votre-username/analytics-dashboard",
       category: 'mobile'
     },
+    {
+      id: 3,
+      title: "Dashboard Analytics",
+      description: "Tableau de bord avec visualisations de données en temps réel",
+      icon: Palette,
+      gradient: "from-gray-800 to-gray-600",
+      images: [
+        "d1.png",
+        "d2.png",
+        "d3.png"
+      ],
+      technologies: ["React", "D3.js", "Node.js"],
+      liveUrl: "https://deke-dashboard-com.vercel.app/",
+      githubUrl: "https://github.com/dekenitoha097-sys/deke.dashboard.com",
+      category: 'web'
+    },
     
   ];
   return (
@@ -141,6 +167,7 @@ export default function Home() {
       <Testimonials scrollToSection={scrollToSection}></Testimonials>
       <Contacts formData={formData} handleInputChange={handleInputChange} handleSubmit={handleSubmit} formStatus={formStatus} loading={loading}></Contacts>
       <Footer scrollToSection={scrollToSection} setIsMenuOpen={setIsMenuOpen}></Footer>
+      <FloatingChat></FloatingChat>
     </>
   );
 }
