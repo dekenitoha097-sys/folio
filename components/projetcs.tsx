@@ -131,7 +131,7 @@ const Projects = ({ projects, scrollToSection }: Props) => {
                             Nos Réalisations
                         </h2>
                         <p className="text-xl text-gray-300 leading-relaxed mb-4">
-                            Découvrez quelques-uns de nos projets récents et comment nous transformons les idées en solutions concrètes.
+                            Découvrez quelques-uns de mes projets récents et comment je transforme les idées en solutions concrètes.
                         </p>
                         <p className="text-base text-gray-400 italic flex items-center justify-center gap-2">
                             <Sparkles className="w-6 h-6 text-[#84cc16]" /> Vous avez une idée ? Nous pouvons la réaliser sur mesure pour votre entreprise !
@@ -324,7 +324,7 @@ const Projects = ({ projects, scrollToSection }: Props) => {
                                 Prêt à créer votre propre projet ?
                             </h3>
                             <p className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
-                                Chaque projet commence par une conversation. Partagez-nous votre vision et transformons-la ensemble en réalité digitale.
+                                Chaque projet commence par une conversation. Partagez-moi votre vision et transformez-la ensemble en réalité digitale.
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4 justify-center">
                                 <Button
@@ -342,7 +342,7 @@ const Projects = ({ projects, scrollToSection }: Props) => {
                                     size="lg"
                                     className="border-2 border-[#84cc16]/50 bg-[#84cc16]/5 text-[#84cc16] hover:bg-[#84cc16]/15 hover:border-[#84cc16] px-10 py-6 text-lg font-semibold rounded-full transition-all duration-300"
                                 >
-                                    Découvrir nos services
+                                    Découvrir mes services
                                 </Button>
                             </div>
                         </div>

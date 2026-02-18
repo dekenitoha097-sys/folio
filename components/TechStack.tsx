@@ -28,7 +28,7 @@ const TechStack = () => {
                     className="text-2xl sm:text-3xl font-bold"
                     style={{ color: themeColor }}
                 >
-                    Technologies que nous utilisons
+                    Technologies que j'utilise
                 </h3>
             </div>
 

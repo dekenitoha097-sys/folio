@@ -62,10 +62,10 @@ const AppExemples = ({scrollToSection}:Props) => {
                             Exemples de projets
                         </h2>
                         <p className="text-xl text-gray-300 leading-relaxed mb-4">
-                            Voici quelques types d&apos;applications que nous pouvons développer pour répondre aux besoins de votre entreprise.
+                            Voici quelques types d'applications que je peux développer pour répondre aux besoins de votre entreprise.
                         </p>
                         <p className="text-sm text-gray-400 max-w-2xl mx-auto">
-                            Ce ne sont que des exemples : nous pouvons créer presque tout type de solution digitale selon vos besoins spécifiques.
+                            Ce ne sont que des exemples : je peux créer presque tout type de solution digitale selon vos besoins spécifiques.
                         </p>
                     </div>
 
@@ -246,7 +246,7 @@ const AppExemples = ({scrollToSection}:Props) => {
                     <div className="max-w-5xl mx-auto bg-gradient-to-r from-black/50 to-black/30 border border-[#84cc16]/30 rounded-3xl p-12 text-center text-white animate-fade-in animation-delay-1000 backdrop-blur-xl group hover:border-[#84cc16]/60 hover:shadow-lg hover:shadow-[#84cc16]/20 transition-all duration-300">
                         <h3 className="text-3xl font-bold mb-4">Vous avez un projet spécifique en tête ?</h3>
                         <p className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
-                            Ces exemples ne sont qu&apos;un aperçu de ce que nous pouvons créer. Chaque projet est unique et nous adaptons nos solutions à vos besoins précis.
+                            Ces exemples ne sont qu&apos;un aperçu de Ce que je peux créer. Chaque projet est unique et j'adapte mes solutions à vos besoins précis.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <Button
@@ -254,14 +254,14 @@ const AppExemples = ({scrollToSection}:Props) => {
                                 size="lg"
                                 className="bg-gradient-to-r from-[#84cc16] to-[#65a30d] text-black hover:shadow-lg hover:shadow-[#84cc16]/50 px-10 py-6 text-lg font-semibold rounded-full transition-all duration-300"
                             >
-                                Parlez-nous de votre idée
+                                Parlez-moi de votre idée
                             </Button>
                             <Button
                                 onClick={() => scrollToSection('services')}
                                 size="lg"
                                 className="border-2 border-[#84cc16]/50 bg-[#84cc16]/5 text-[#84cc16] hover:bg-[#84cc16]/15 hover:border-[#84cc16] px-10 py-6 text-lg font-semibold rounded-full transition-all duration-300"
                             >
-                                Voir nos services
+                                Voir mes services
                             </Button>
                         </div>
                     </div>

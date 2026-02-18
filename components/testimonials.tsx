@@ -13,7 +13,7 @@ const testimonials = [
         id: 1,
         name: "Marie Dubois",
         role: "CEO, TechStart Morocco",
-        content: "Un développeur exceptionnel qui a transformé notre vision en réalité. Le site e-commerce livré dépasse nos attentes en termes de design et de performance.",
+        content: "Un développeur exceptionnel qui a transformé ma vision en réalité. Le site e-commerce livré dépasse mes attentes en termes de design et de performance.",
         rating: 5,
         avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop"
     },
@@ -21,7 +21,7 @@ const testimonials = [
         id: 2,
         name: "Ahmed Benali",
         role: "Directeur Technique, InnovCorp",
-        content: "Collaboration excellente sur notre dashboard analytics. Communication fluide, respect des délais et code de qualité professionnelle. Je recommande fortement.",
+        content: "Collaboration excellente sur mon dashboard analytics. Communication fluide, respect des délais et code de qualité professionnelle. Je recommande fortement.",
         rating: 5,
         avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop"
     },
@@ -29,7 +29,7 @@ const testimonials = [
         id: 3,
         name: "Sophie Martin",
         role: "Fondatrice, BeautyCare",
-        content: "Notra application mobile a généré une augmentation de 40% de nos commandes. Support réactif et professionnel tout au long du projet.",
+        content: "Ma application mobile a généré une augmentation de 40% de mes commandes. Support réactif et professionnel tout au long du projet.",
         rating: 5,
         avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop"
     },
@@ -37,7 +37,7 @@ const testimonials = [
         id: 4,
         name: "Youssef El Amrani",
         role: " CTO, FinanceApp",
-        content: "Excellente expertise technique en React Native et Node.js. Le développement de notre application financière a été réalisé dans les temps.",
+        content: "Excellente expertise technique en React Native et Node.js. Le développement de mon application financière a été réalisé dans les temps.",
         rating: 5,
         avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop"
     }

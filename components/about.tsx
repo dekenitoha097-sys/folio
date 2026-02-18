@@ -22,7 +22,7 @@ const About = ({ scrollToSection }: Props) => {
                                 </div>
                                 <h2 className="text-5xl sm:text-6xl font-bold text-white leading-tight">
                                     À propos<br />
-                                    <span className="text-green-500">de nous</span>
+                                    <span className="text-green-500">de moi</span>
                                 </h2>
                                 <p className="text-gray-400 text-lg">
                                     Votre partenaire digital pour des solutions innovantes et performantes.
@@ -48,7 +48,7 @@ const About = ({ scrollToSection }: Props) => {
                                             <span className="text-sm font-semibold text-gray-400 uppercase tracking-wider">Années d'expérience</span>
                                         </div>
                                         <p className="text-xl text-gray-300 leading-relaxed group-hover:text-white transition-colors duration-300">
-                                            Avec plus de 3 ans d'expertise en développement web et mobile, nous accompagnons nos clients dans la conception de solutions digitales modernes, performantes et fiables, répondant à leurs besoins spécifiques.
+                                            Avec plus de 3 ans d'expertise en développement web et mobile, j'accompagne mes clients dans la conception de solutions digitales modernes, performantes et fiables, répondant à leurs besoins spécifiques.
                                         </p>
                                     </div>
                                 </div>
@@ -61,7 +61,7 @@ const About = ({ scrollToSection }: Props) => {
                                     <div className="space-y-4">
                                         <h3 className="text-2xl font-bold text-white">Technologies de pointe</h3>
                                         <p className="text-xl text-gray-300 leading-relaxed group-hover:text-white transition-colors duration-300">
-                                            Notre passion pour les technologies de pointe telles que Python, React, Next.js, React Native, Flutter et TypeScript nous permet de livrer des solutions innovantes et évolutives.
+                                            Ma passion pour les technologies de pointe telles que Python, React, Next.js, React Native, Flutter et TypeScript me permet de livrer des solutions innovantes et évolutives.
                                         </p>
 
                                         {/* Tags technos */}
@@ -84,9 +84,9 @@ const About = ({ scrollToSection }: Props) => {
                                 <div className="relative pl-8 border-l-2 border-gray-800 hover:border-green-500 transition-colors duration-500">
                                     <div className="absolute -left-[9px] top-0 w-4 h-4 bg-green-500 rounded-full group-hover:scale-125 transition-transform duration-300"></div>
                                     <div className="space-y-4">
-                                        <h3 className="text-2xl font-bold text-white">Notre approche</h3>
+                                        <h3 className="text-2xl font-bold text-white">Mon approche</h3>
                                         <p className="text-xl text-gray-300 leading-relaxed group-hover:text-white transition-colors duration-300">
-                                            Notre approche combine excellence technique, design élégant et focus sur l'expérience utilisateur, afin de créer des produits digitaux qui font réellement la différence.
+                                            Mon approche combine excellence technique, design élégant et focus sur l'expérience utilisateur, afin de créer des produits digitaux qui font réellement la différence.
                                         </p>
                                     </div>
                                 </div>
@@ -118,7 +118,7 @@ const About = ({ scrollToSection }: Props) => {
                                     onClick={() => scrollToSection('contact')}
                                     className="bg-white text-black hover:bg-gray-100 px-8 py-6 font-semibold group"
                                 >
-                                    Contactez-nous
+                                    Contactez-moi
                                     <svg className="inline-block ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                                     </svg>

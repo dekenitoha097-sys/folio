@@ -59,7 +59,7 @@ const Solutions = ({ scrollToSection }: Props) => {
                             <div className="w-8 h-px bg-[#84cc16]/50"></div>
                         </div>
                         <h2 className="text-5xl sm:text-6xl font-bold text-white mb-6">
-                            Nos Services
+                            Mes Services
                         </h2>
                         <p className="text-xl text-gray-300 leading-relaxed">
                             Des solutions complètes et sur mesure pour transformer vos idées en produits digitaux performants

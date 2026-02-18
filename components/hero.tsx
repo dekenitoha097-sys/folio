@@ -184,7 +184,7 @@ const Hero = ({ scrollToSection }: Props) => {
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.3, duration: 0.6 }}
                             >
-                                Nous transformons vos idées en applications web et mobiles performantes,
+                                Je transforme vos idées en applications web et mobiles performantes,
                                 conçues pour soutenir la croissance de votre activité.
                             </motion.p>
 
@@ -217,7 +217,7 @@ const Hero = ({ scrollToSection }: Props) => {
                                         size="lg"
                                         className="border-2 border-[#84cc16]/50 bg-[#84cc16]/5 backdrop-blur-md text-[#84cc16] hover:bg-[#84cc16]/15 hover:border-[#84cc16] hover:shadow-lg hover:shadow-[#84cc16]/30 cursor-pointer px-8 py-4 text-lg font-semibold transition-all duration-300 rounded-full"
                                     >
-                                        Découvrir nos services
+                                        Découvrir mes services
                                     </Button>
                                 </motion.div>
                             </motion.div>

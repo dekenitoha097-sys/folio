@@ -259,7 +259,7 @@ const Contacts = ({ formData, handleInputChange, handleSubmit, formStatus, loadi
                                             <Sparkles className="w-6 h-6 text-[#84cc16]" />
                                         </h3>
                                         <p className="text-gray-300 leading-relaxed">
-                                            Racontez-nous votre projet. Plus vous êtes précis, plus nous pourrons vous aider efficacement.
+                                            Racontez-moi votre projet. Plus vous êtes précis, plus je pourrons vous aider efficacement.
                                         </p>
                                     </div>
 
@@ -278,7 +278,7 @@ const Contacts = ({ formData, handleInputChange, handleSubmit, formStatus, loadi
                                                         type="text"
                                                         value={formData.name}
                                                         onChange={handleInputChange}
-                                                        placeholder="Jean Dupont"
+                                                        placeholder="Youssef Alami"
                                                         className="border-2 border-[#84cc16]/30 focus:border-[#84cc16] rounded-2xl h-14 pl-12 bg-white/5 focus:bg-white/10 transition-all duration-300 text-white placeholder:text-gray-500 group-hover:border-[#84cc16]/50"
                                                     />
                                                     <div className="absolute left-4 top-1/2 -translate-y-1/2 text-[#84cc16]/50">
@@ -301,7 +301,7 @@ const Contacts = ({ formData, handleInputChange, handleSubmit, formStatus, loadi
                                                         type="email"
                                                         value={formData.email}
                                                         onChange={handleInputChange}
-                                                        placeholder="jean.dupont@example.com"
+                                                        placeholder="youssefalami@example.com"
                                                         className="border-2 border-[#84cc16]/30 focus:border-[#84cc16] rounded-2xl h-14 pl-12 bg-white/5 focus:bg-white/10 transition-all duration-300 text-white placeholder:text-gray-500 group-hover:border-[#84cc16]/50"
                                                     />
                                                     <div className="absolute left-4 top-1/2 -translate-y-1/2 text-[#84cc16]/50">
@@ -388,7 +388,7 @@ const Contacts = ({ formData, handleInputChange, handleSubmit, formStatus, loadi
                                                             Erreur lors de l'envoi
                                                             <span className="text-xl">⚠️</span>
                                                         </h4>
-                                                        <p className="text-sm text-gray-300">Veuillez réessayer ou nous contacter directement par email.</p>
+                                                        <p className="text-sm text-gray-300">Veuillez réessayer ou me contacter directement par email.</p>
                                                     </div>
                                                 </div>
                                             </div>
